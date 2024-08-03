@@ -1,0 +1,39 @@
+body{
+    box-sizing: border-box;
+}
+
+.navbar{
+    background-color: #f1f1f1;
+    margin: 0;
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+}
+
+.navbar ul{
+    list-style: none;
+}
+
+.navbar ul li{
+    display: block;
+    padding: 16px;
+}
+
+.navbar ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+.navbar ul li:active {
+    background-color: yellow;
+}
+
+.navbar ul li:hover:not(:active) {
+    text-decoration: underline;
+    background-color: white;
+}
+
+.home{
+    margin-left: 300px;
+}
