@@ -12,4 +12,6 @@ class Expense(models.Model):
     expenses = models.CharField(max_length=500)
     amount_spent = models.FloatField()
     spent_date = models.DateField()
-    
+
+    def __str__(self):
+        return f"{self.expenses},{self.amount_spent}"
