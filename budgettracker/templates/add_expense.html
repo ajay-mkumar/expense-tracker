@@ -1,1 +1,40 @@
-<h1>Page under construction!</h1>
+{% extends "template.html" %}
+
+{% block title %} Add Expense {% endblock %}
+
+{% block content%}
+<form method="post">
+    {% csrf_token %}
+    {{form.expenses.label}} <br>
+    {{form.expenses}} <br>
+    {{form.amount_spent.label}} <br>
+    {{form.amount_spent}} <br>
+    {{form.spent_date.label}} <br>
+    {{form.spent_date}} <br>
+    <button>Add Expense</button>
+</form>
+
+{% if form.errors %}
+<div>
+    <ul>
+    {% for field in form %}
+    {% for error in field.errors %}
+        <li>{{error}}</li>
+    {% endfor %}
+    {% endfor %}
+        </ul>
+</div>
+{% endif %}
+
+{% if data %}
+<div>
+    <ul>
+    {% for expense in data %}
+        <li>{{expense.expenses}}</li>
+        <li>{{expense.amount_spent}}</li>
+        <li>{{expense.spent_date}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endblock%}
