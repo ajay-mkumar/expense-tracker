@@ -2,7 +2,8 @@
 
 {% block title %} Add Expense {% endblock %}
 
-{% block content%}
+{% block content %}
+<div class="expense-form"> 
 <form method="post">
     {% csrf_token %}
     {{form.expenses.label}} <br>
@@ -13,7 +14,7 @@
     {{form.spent_date}} <br>
     <button>Add Expense</button>
 </form>
-
+</div>
 {% if form.errors %}
 <div>
     <ul>
@@ -37,4 +38,4 @@
     </ul>
 </div>
 {% endif %}
-{% endblock%}
+{% endblock %}

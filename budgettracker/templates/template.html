@@ -1,10 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>{% block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<nav>
+<nav class="navbar">
     <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'about_us' %}">About Us</a></li>
@@ -15,5 +17,16 @@
 {% block content%}
 {% endblock %}
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPath = window.location.pathname;
+        const links = document.querySelectorAll('nav ul li a')
+        Array.from(links).forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.parentNode.classList.add('active');
+            }
+        });
+    })
+</script>
 </body>
 </html>
