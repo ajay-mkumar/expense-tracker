@@ -6,13 +6,13 @@
 <div class="expense-form"> 
 <form method="post">
     {% csrf_token %}
-    {{form.expenses.label}} <br>
-    {{form.expenses}} <br>
-    {{form.amount_spent.label}} <br>
-    {{form.amount_spent}} <br>
-    {{form.spent_date.label}} <br>
-    {{form.spent_date}} <br>
-    <button>Add Expense</button>
+    {{form.expenses.label}} 
+    {{form.expenses}} 
+    {{form.amount_spent.label}} 
+    {{form.amount_spent}} 
+    {{form.spent_date.label}} 
+    {{form.spent_date}} 
+    <button type="submit" id="expense-submit">Add Expense</button>
 </form>
 </div>
 {% if form.errors %}
@@ -28,14 +28,21 @@
 {% endif %}
 
 {% if data %}
-<div>
-    <ul>
+<h1>Recent Updates</h1>
+<div class="recent-expense">
+    <ul style="font-weight: bold;">
+        <li>Expense</li>
+        <li>Amount</li>
+        <li>Date</li>
+    </ul>
     {% for expense in data %}
+
+    <ul class="expense-list">
         <li>{{expense.expenses}}</li>
         <li>{{expense.amount_spent}}</li>
         <li>{{expense.spent_date}}</li>
+        </ul>
         {% endfor %}
-    </ul>
 </div>
 {% endif %}
 {% endblock %}

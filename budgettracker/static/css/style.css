@@ -8,11 +8,12 @@ body{
     width: 200px;
     height: 100%;
     overflow: auto;
-    position: fixed;
+    position: absolute;
 }
 
 .navbar ul{
     list-style: none;
+    padding: 10px;
 }
 
 .navbar ul li{
@@ -25,15 +26,81 @@ body{
     text-decoration: none;
 }
 
-.navbar ul li:active {
-    background-color: yellow;
+.navbar ul li.active {
+    background-color: pink;
 }
 
-.navbar ul li:hover:not(:active) {
+.navbar ul li:hover:not(.active) {
     text-decoration: underline;
     background-color: white;
 }
 
 .home{
     margin-left: 300px;
+}
+
+.btn-add-expense{
+    float: right;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: burlywood;
+    opacity: 10px;
+    border: none;
+}
+
+.btn-add-expense a{
+    text-decoration: none;
+    color: white;
+}
+
+.expense-form{
+    margin-left: 300px;
+}
+
+.expense-form form {
+    padding: 5px;
+    display: flex;
+}
+
+.expense-form form input {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.expense-form form label {
+    padding: 5px;
+    margin: 10px;
+}
+
+#expense-submit {
+    border: none;
+    border: 1px solid lightgreen;
+    border-radius: 10px;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+#expense-submit:hover {
+    background-color: lightgreen;
+}
+
+.recent-expense {
+    margin: 100px 200px;
+}
+.recent-expense ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.expense-list {
+    padding: 5px;
+    background-color: lightgray;
+    margin-left: 100px;
 }
