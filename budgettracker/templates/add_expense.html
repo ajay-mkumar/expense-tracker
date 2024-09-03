@@ -6,13 +6,8 @@
 <div class="expense-form"> 
 <form method="post">
     {% csrf_token %}
-    {{form.expenses.label}} 
-    {{form.expenses}} 
-    {{form.amount_spent.label}} 
-    {{form.amount_spent}} 
-    {{form.spent_date.label}} 
-    {{form.spent_date}} 
-    <button type="submit" id="expense-submit">Add Expense</button>
+    {{form.as_p}}
+    <button type="submit" id="expense-submit">{% if is_edit %}  edit {% else %} Add Expense {% endif %}</button>
 </form>
 </div>
 {% if form.errors %}
@@ -28,7 +23,6 @@
 {% endif %}
 
 {% if data %}
-<h1>Recent Updates</h1>
 <div class="recent-expense">
     <ul style="font-weight: bold;">
         <li>Expense</li>

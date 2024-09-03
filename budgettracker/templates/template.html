@@ -10,13 +10,14 @@
     <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'about_us' %}">About Us</a></li>
+        <li><a href="{% url 'expense' %}">Expenses</a></li>
         <li>Welcome {{user.username}}</li>
         <li><a href="{% url 'logout' %}">Logout</a></li>
     </ul>
 </nav>
 
-<div>x
-{% block content%}
+<div class="page-content">
+{% block content %}
 {% endblock %}
 </div>
 <script>

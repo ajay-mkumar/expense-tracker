@@ -92,6 +92,7 @@ body{
 .recent-expense {
     margin: 100px 200px;
 }
+
 .recent-expense ul{
     list-style: none;
     display: flex;
@@ -103,4 +104,20 @@ body{
     padding: 5px;
     background-color: lightgray;
     margin-left: 100px;
+}
+
+.expense-table {
+    position: absolute;
+    left: 300px;
+}
+
+.expense-table table{
+    margin-top: 100px;
+    border-spacing: 15px;
+}
+
+
+.expense-column {
+    width: 500px;
+    text-align: center;
 }
